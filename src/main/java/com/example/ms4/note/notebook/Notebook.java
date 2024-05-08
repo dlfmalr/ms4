@@ -25,4 +25,9 @@ public class Notebook {
 
     @OneToMany(mappedBy = "parent")
     List<Notebook> children = new ArrayList<>();
+
+    public void addChild(Notebook child) {
+        child.setParent(this);
+        children.add(child);
+    }
 }
